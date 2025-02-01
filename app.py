@@ -1,6 +1,5 @@
 import streamlit as st
 import fitz  # PyMuPDF
-import openai
 from openai import OpenAI
 
 
@@ -42,7 +41,7 @@ checklist = carregar_checklist()
 st.sidebar.markdown("## Checklist")
 st.sidebar.markdown(checklist)
 
-suploaded_file = st.file_uploader("Escolha um arquivo PDF", type='pdf')
+uploaded_file = st.file_uploader("Escolha um arquivo PDF", type='pdf')
 if uploaded_file:
     texto_pdf = extrair_texto_pdf(uploaded_file.getvalue())
     st.text_area("Texto extraído do PDF", texto_pdf, height=300)
